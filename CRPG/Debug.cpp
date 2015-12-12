@@ -1,4 +1,4 @@
-#include "System\Debug.h"
+#include "Data\Debug.h"
 
 //Debug Log Function
 void LOG(LPCWSTR msg) {

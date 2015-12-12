@@ -1,4 +1,4 @@
-#include "System\Main.h"
+#include "Data\Main.h"
 
 int WINAPI WinMain
 	(HINSTANCE	hCurrentInstance
