@@ -150,11 +150,15 @@
     <None Include="Data\System\Database.db" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Data\Debug.cpp" />
+    <ClCompile Include="Data\File.cpp" />
     <ClCompile Include="Data\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data\System\Base.h" />
+    <ClInclude Include="Data\System\Debug.h" />
     <ClInclude Include="Data\System\File.h" />
+    <ClInclude Include="Data\System\Main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

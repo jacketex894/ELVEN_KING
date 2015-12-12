@@ -1,9 +1,4 @@
-#include <windows.h>
-#include <gdiplus.h>
-#include "System/Base.h"
-#include "System/File.h"
-
-LRESULT CALLBACK MainProc(HWND,UINT,WPARAM,LPARAM);
+#include "System\Main.h"
 
 int WINAPI WinMain
 	(HINSTANCE	hCurrentInstance
@@ -77,9 +72,8 @@ LRESULT CALLBACK MainProc
 
 	switch (iMsg) {
 	case WM_CREATE:
-		LOG(rect.left);
-		game_screen.left = ((rect.right - rect.left) - SCREEN_WIDTH) / 2;
-		game_screen.top = ((rect.bottom - rect.top) - SCREEN_HEIGHT) / 2;
+		game_screen.left = (GetSystemMetrics(SM_CXSCREEN) - SCREEN_WIDTH) / 2;
+		game_screen.top = (GetSystemMetrics(SM_CYSCREEN) - SCREEN_HEIGHT) / 2;
 		game_screen.right = game_screen.left + SCREEN_WIDTH;
 		game_screen.bottom = game_screen.top + SCREEN_HEIGHT;
 		return 0;
