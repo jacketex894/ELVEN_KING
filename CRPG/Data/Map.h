@@ -1,12 +1,22 @@
 #pragma once
+#include <iostream>
+#include "File.h"
+
+#define SEPARATE	'#'
+#define EXTENSION	".map"
+
+using namespace std;
+
 class Map
 {
 public:
-	Map(int,int);
+	Map(string);
+	int width;
+	int height;
 	int* operator[](int);
 	~Map();
 private:
-	int iWidth;
-	int iHeight;
+	File* fMap;
 	int **iMap;
+	void resolveMap();
 };

@@ -1,24 +1,44 @@
 #include "Data\Map.h"
-Map::Map(int widht, int height)
+
+Map::Map(string mapName)
 {
-	//setting
-	this->iWidth = widht;
-	this->iHeight = height;
+	//the map file
+	this->fMap = new File(mapName + EXTENSION);
 	//create map
-	int i,j;
-	this->iMap = new int*[this->iHeight];
-	for (i = 0; i < this->iHeight; i++)
-		this->iMap[i] = new int[this->iWidth];
+	int i;
+	this->iMap = new int*[this->height];
+	for (i = 0; i < this->height; i++)
+		this->iMap[i] = new int[this->width];
+	this->resolveMap();
 }
 
 int* Map::operator[](int index) {
 	return this->iMap[index];
 }
 
+void Map::resolveMap(){
+	int index,unitCount = 0;
+	string fileText = this->fMap->output();
+	string fileTextUnit[3] = {""};
+	for (index = 0;
+		 index < fileText.length() && unitCount < 3;
+		 index++)
+	{
+		if (fileText[index] == SEPARATE) {
+			unitCount++;
+			continue;
+		}
+		fileTextUnit[unitCount] += fileText[index];
+	}
+	//work break
+	/*
+	LOG(fileTextUnit[0]);
+	LOG(fileTextUnit[1]);
+	LOG(fileTextUnit[2]);
+	*/
+}
+
 Map::~Map()
 {
-	int i;
-	for (i = 0; i < this->iHeight; i++)
-		delete this->iMap[i];
-	delete this->iMap;
+	delete[] this->iMap;
 }

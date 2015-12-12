@@ -21,11 +21,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\Map\n01.map">
-      <Filter>資源檔\Map</Filter>
-    </None>
     <None Include="Data\System\Database.db">
       <Filter>資源檔\System</Filter>
+    </None>
+    <None Include="Data\Map\ex1.map">
+      <Filter>資源檔\Map</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

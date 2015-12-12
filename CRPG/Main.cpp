@@ -39,6 +39,7 @@ int WINAPI WinMain
 	,NULL);
 
 	if(!hwndWindow) LOG("HWND Failed!");
+	Map no1("ex1");
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
@@ -69,7 +70,6 @@ LRESULT CALLBACK MainProc
 		int right;
 		int bottom;
 	} game_screen;
-
 	switch (iMsg) {
 	case WM_CREATE:
 		game_screen.left = (GetSystemMetrics(SM_CXSCREEN) - SCREEN_WIDTH) / 2;

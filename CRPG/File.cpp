@@ -1,11 +1,19 @@
 #include "Data\File.h"
 
+File::File(string fFileName)
+{
+	this->strLocation = FILE_MAP + fFileName;
+	this->fFileName = fFileName;
+	this->bBinary = false;
+	setFileLenght();
+}
+
 File::File(string strLocation, string fFileName)
 {
 	this->strLocation = strLocation + fFileName;
-	this->iFileSize = file.tellg();
 	this->fFileName = fFileName;
 	this->bBinary = false;
+	setFileLenght();
 }
 
 void File::open() {
@@ -14,6 +22,13 @@ void File::open() {
 	else
 		file.open(strLocation, FILE_DEFAULT);
 	if (!this->file.is_open()) LOG(L"File Open Failed!");
+}
+
+void File::setFileLenght() {
+	file.open(strLocation, ios::binary | FILE_DEFAULT);
+	file.seekg(0, ios::end);
+	this->iFileSize = file.tellg();
+	file.close();
 }
 
 void File::input(string strMessage) {
