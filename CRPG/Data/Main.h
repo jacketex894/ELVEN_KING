@@ -4,6 +4,7 @@
 
 #include "Base.h"
 #include "Debug.h"
+#include "Map.h"
 
 int WINAPI WinMain(HINSTANCE ,HINSTANCE ,LPSTR ,int);
 LRESULT CALLBACK MainProc(HWND, UINT, WPARAM, LPARAM);

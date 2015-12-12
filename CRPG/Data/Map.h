@@ -3,9 +3,10 @@ class Map
 {
 public:
 	Map(int,int);
+	int* operator[](int);
 	~Map();
 private:
-	int siWidth;
-	int siHeight;
-	int **sipMap;
+	int iWidth;
+	int iHeight;
+	int **iMap;
 };

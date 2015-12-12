@@ -29,27 +29,33 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Data\Main.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="Data\Debug.cpp">
+    <ClCompile Include="Debug.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="Data\File.cpp">
+    <ClCompile Include="File.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data\System\Base.h">
+    <ClInclude Include="Data\Base.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\File.h">
+    <ClInclude Include="Data\Debug.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Debug.h">
+    <ClInclude Include="Data\File.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Main.h">
+    <ClInclude Include="Data\Main.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Map.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
