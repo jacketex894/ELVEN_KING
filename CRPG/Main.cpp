@@ -41,8 +41,8 @@ int WINAPI WinMain
 	if(!hwndWindow) LOG("HWND Failed!");
 
 	//Map no1("ex1");
-	database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
-	LOG(database.message[1]);
+	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
+	//LOG(database.message[1]);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);

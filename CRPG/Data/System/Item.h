@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -8,9 +9,6 @@ public:
 //矗à︹计硂ㄧ计搭Privateず跑计计肚
 //ㄤ篈玥琌ノbool耞
 //private跑计ぇΤ﹚﹀秖┪ㄤ计ぇ砞
-
-
-
 
 private:
 	int HpSmall;        //秖HP確

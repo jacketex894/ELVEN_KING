@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E7016EBE-1755-456D-B7B0-D9DDD2DCA730}</ProjectGuid>
+    <ProjectGuid>{EA9835F2-B6DA-4FB2-B1CF-7314026D0713}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CRPG</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -146,10 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="Data\Map\ex1.map" />
-    <None Include="Data\System\Database.db" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="Data\System\Sqlite\sqlite3.c" />
     <ClCompile Include="Debug.cpp" />
@@ -158,23 +154,19 @@
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
-< HEAD
     <ClInclude Include="Data\System\Base.h" />
     <ClInclude Include="Data\System\Database.h" />
     <ClInclude Include="Data\System\Debug.h" />
     <ClInclude Include="Data\System\File.h" />
     <ClInclude Include="Data\System\Global.h" />
+    <ClInclude Include="Data\System\Item.h" />
     <ClInclude Include="Data\System\Main.h" />
     <ClInclude Include="Data\System\Map.h" />
     <ClInclude Include="Data\System\Sqlite\sqlite3.h" />
-=======
-    <ClInclude Include="..\..\..\Item.h" />
-    <ClInclude Include="Data\Base.h" />
-    <ClInclude Include="Data\Debug.h" />
-    <ClInclude Include="Data\File.h" />
-    <ClInclude Include="Data\Main.h" />
-    <ClInclude Include="Data\Map.h" />
-> 0f62c5674a21ca32e4c9b41ea67d159ed9fbdacc
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Map\ex1.map" />
+    <None Include="Data\System\Database.db" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

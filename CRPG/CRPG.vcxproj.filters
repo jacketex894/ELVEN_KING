@@ -13,23 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="資源檔\Map">
-      <UniqueIdentifier>{c086adcb-0148-48e7-9290-9fda91f7e4f0}</UniqueIdentifier>
+    <Filter Include="資源檔\地圖">
+      <UniqueIdentifier>{aaabc6b0-d1a6-47c9-aae5-7050ea399764}</UniqueIdentifier>
     </Filter>
-    <Filter Include="資源檔\System">
-      <UniqueIdentifier>{9356819e-60de-48ff-8719-ad36d96a3d52}</UniqueIdentifier>
+    <Filter Include="資源檔\資料庫">
+      <UniqueIdentifier>{f3abcb05-4c82-41e4-9dcc-ebe6919cd5c1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\Map\ex1.map">
-      <Filter>資源檔\Map</Filter>
-    </None>
-    <None Include="Data\System\Database.db">
-      <Filter>資源檔\System</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Map.cpp">
+    <ClCompile Include="Database.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="Debug.cpp">
@@ -41,7 +33,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="Database.cpp">
+    <ClCompile Include="Map.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
@@ -49,9 +41,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data\System\Sqlite\sqlite3.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="Data\System\Base.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -64,17 +53,28 @@
     <ClInclude Include="Data\System\File.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="Data\System\Global.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Item.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
     <ClInclude Include="Data\System\Main.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Map.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Global.h">
+    <ClInclude Include="Data\System\Sqlite\sqlite3.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Item.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\System\Database.db">
+      <Filter>資源檔\資料庫</Filter>
+    </None>
+    <None Include="Data\Map\ex1.map">
+      <Filter>資源檔\地圖</Filter>
+    </None>
   </ItemGroup>
 </Project>

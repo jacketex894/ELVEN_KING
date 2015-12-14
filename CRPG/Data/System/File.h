@@ -1,9 +1,9 @@
 #pragma once
 #include <fstream>
 #include <string>
-#include "Base.h"
 #include "Debug.h"
 
+#define FILE_MAP	"./Data/Map/"
 #define FILE_DEFAULT ios::in | ios::out
 
 using namespace std;
