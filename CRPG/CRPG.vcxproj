@@ -158,6 +158,7 @@
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+< HEAD
     <ClInclude Include="Data\System\Base.h" />
     <ClInclude Include="Data\System\Database.h" />
     <ClInclude Include="Data\System\Debug.h" />
@@ -166,6 +167,14 @@
     <ClInclude Include="Data\System\Main.h" />
     <ClInclude Include="Data\System\Map.h" />
     <ClInclude Include="Data\System\Sqlite\sqlite3.h" />
+=======
+    <ClInclude Include="..\..\..\Item.h" />
+    <ClInclude Include="Data\Base.h" />
+    <ClInclude Include="Data\Debug.h" />
+    <ClInclude Include="Data\File.h" />
+    <ClInclude Include="Data\Main.h" />
+    <ClInclude Include="Data\Map.h" />
+> 0f62c5674a21ca32e4c9b41ea67d159ed9fbdacc
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

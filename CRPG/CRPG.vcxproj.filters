@@ -73,5 +73,8 @@
     <ClInclude Include="Data\System\Global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Item.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
