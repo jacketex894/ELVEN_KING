@@ -1,4 +1,4 @@
-#include "Data\Debug.h"
+#include "Data\System\Debug.h"
 
 //Debug Log Function
 void LOG(LPCWSTR msg) {
@@ -7,6 +7,11 @@ void LOG(LPCWSTR msg) {
 void LOG(string msg) {
 	wchar_t str[256];
 	wsprintfW(str, L"%hs", msg.c_str());
+	LOG(str);
+}
+void LOG(const char* msg) {
+	wchar_t str[256];
+	wsprintfW(str, L"%hs", msg);
 	LOG(str);
 }
 void LOG(int msg) {

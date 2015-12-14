@@ -1,4 +1,4 @@
-#include "Data\Main.h"
+#include "Data\System\Main.h"
 
 int WINAPI WinMain
 	(HINSTANCE	hCurrentInstance
@@ -39,7 +39,10 @@ int WINAPI WinMain
 	,NULL);
 
 	if(!hwndWindow) LOG("HWND Failed!");
-	Map no1("ex1");
+
+	//Map no1("ex1");
+	database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
+	LOG(database.message[1]);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);

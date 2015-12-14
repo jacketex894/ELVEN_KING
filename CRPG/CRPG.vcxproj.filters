@@ -21,11 +21,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\System\Database.db">
-      <Filter>資源檔\System</Filter>
-    </None>
     <None Include="Data\Map\ex1.map">
       <Filter>資源檔\Map</Filter>
+    </None>
+    <None Include="Data\System\Database.db">
+      <Filter>資源檔\System</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -41,21 +41,36 @@
     <ClCompile Include="Main.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\System\Sqlite\sqlite3.c">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data\Base.h">
+    <ClInclude Include="Data\System\Sqlite\sqlite3.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Debug.h">
+    <ClInclude Include="Data\System\Base.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\File.h">
+    <ClInclude Include="Data\System\Database.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Main.h">
+    <ClInclude Include="Data\System\Debug.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Map.h">
+    <ClInclude Include="Data\System\File.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Main.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Map.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
