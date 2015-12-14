@@ -156,6 +156,7 @@
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Item.h" />
     <ClInclude Include="Data\Base.h" />
     <ClInclude Include="Data\Debug.h" />
     <ClInclude Include="Data\File.h" />
