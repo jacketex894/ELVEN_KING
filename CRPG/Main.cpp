@@ -46,6 +46,9 @@ int WINAPI WinMain
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
+
+    //Update Screen 
+    InvalidateRect(hwndWindow,&graphics.gameScreen,TRUE);
 	
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
@@ -66,6 +69,15 @@ LRESULT CALLBACK MainProc
 	case WM_PAINT:
 		graphics.update();
 		return 0;
+    case WM_KEYDOWN:
+        switch (wParam)
+        {
+        case 37: graphics.dx -= 10; break;
+        case 38: graphics.dy -= 10; break;
+        case 39: graphics.dx += 10; break;
+        case 40: graphics.dy += 10; break;
+        }
+        return 0;
 	case WM_DESTROY:
 		return 0;
 	};
