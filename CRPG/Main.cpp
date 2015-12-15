@@ -59,34 +59,12 @@ LRESULT CALLBACK MainProc
 ,UINT	iMsg
 ,WPARAM	wParam
 ,LPARAM	lParam) {
-	//setting paint object
-	PAINTSTRUCT pen;
-	HDC hDc;
-	RECT rect;
-	GetClientRect(hwnd, &rect);
-
-	//setting game_screen
-	static struct screen
-	{
-		int left;
-		int top;
-		int right;
-		int bottom;
-	} game_screen;
 	switch (iMsg) {
 	case WM_CREATE:
-		game_screen.left = (GetSystemMetrics(SM_CXSCREEN) - SCREEN_WIDTH) / 2;
-		game_screen.top = (GetSystemMetrics(SM_CYSCREEN) - SCREEN_HEIGHT) / 2;
-		game_screen.right = game_screen.left + SCREEN_WIDTH;
-		game_screen.bottom = game_screen.top + SCREEN_HEIGHT;
+        graphics.initialize(hwnd);
 		return 0;
 	case WM_PAINT:
-		hDc = BeginPaint(hwnd, &pen);
-		Rectangle(hDc,game_screen.left
-					 ,game_screen.top
-					 ,game_screen.right
-					 ,game_screen.bottom);
-		EndPaint(hwnd, &pen);
+		graphics.update();
 		return 0;
 	case WM_DESTROY:
 		return 0;

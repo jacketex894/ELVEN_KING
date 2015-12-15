@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <gdiplus.h>
 
 #include "Base.h"
 #include "Global.h"

@@ -150,6 +150,7 @@
     <ClCompile Include="Data\System\Sqlite\sqlite3.c" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="File.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="Data\System\Debug.h" />
     <ClInclude Include="Data\System\File.h" />
     <ClInclude Include="Data\System\Global.h" />
+    <ClInclude Include="Data\System\Graphics.h" />
     <ClInclude Include="Data\System\Item.h" />
     <ClInclude Include="Data\System\Main.h" />
     <ClInclude Include="Data\System\Map.h" />

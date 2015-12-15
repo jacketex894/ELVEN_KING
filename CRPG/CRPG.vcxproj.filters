@@ -39,6 +39,9 @@
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
       <Filter>原始程式檔</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data\System\Base.h">
@@ -66,6 +69,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Sqlite\sqlite3.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Graphics.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
