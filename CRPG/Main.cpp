@@ -18,7 +18,7 @@ int WINAPI WinMain
 	window.hIcon			= LoadIcon(hCurrentInstance, IDI_APPLICATION);
 	window.hIconSm			= LoadIcon(hCurrentInstance, IDI_APPLICATION);
 	window.hCursor			= LoadCursor(NULL, IDC_ARROW);
-	window.style			= CS_CLASSDC;
+	window.style			= CS_SAVEBITS;
 	window.hbrBackground	= (HBRUSH)GetStockObject(BLACK_BRUSH);
 	window.lpszMenuName		= NULL;
 	window.lpszClassName	= CLASSNAME;
@@ -40,15 +40,17 @@ int WINAPI WinMain
 
 	if(!hwndWindow) LOG("HWND Failed!");
 
-	//Map no1("ex1");
+	Map no1("ex1");
 	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
 	//LOG(database.message[1]);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
+    SetTimer(hwndWindow,1, UPDATE_FRAME,(TIMERPROC)update);
+
     //Update Screen 
-    InvalidateRect(hwndWindow,&graphics.gameScreen,TRUE);
+   // InvalidateRect(hwndWindow,&graphics.gameScreen,TRUE);
 	
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
@@ -66,19 +68,21 @@ LRESULT CALLBACK MainProc
 	case WM_CREATE:
         graphics.initialize(hwnd);
 		return 0;
-	case WM_PAINT:
+    case WM_TIMER:
+    case WM_PAINT:
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
         switch (wParam)
         {
-        case 37: graphics.dx -= 10; break;
-        case 38: graphics.dy -= 10; break;
-        case 39: graphics.dx += 10; break;
-        case 40: graphics.dy += 10; break;
+        case 37: graphics.dx -= 32; return 0;
+        case 38: graphics.dy -= 32; return 0;
+        case 39: graphics.dx += 32; return 0;
+        case 40: graphics.dy += 32; return 0;
         }
         return 0;
 	case WM_DESTROY:
+        exit(0);
 		return 0;
 	};
 	return DefWindowProc(hwnd, iMsg, wParam, lParam);

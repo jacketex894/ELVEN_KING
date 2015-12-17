@@ -11,6 +11,7 @@ public:
     void update();
     RECT gameScreen;
     int dx = 0, dy = 0;
+    int gdx = 0, gdy = 0;
 private:
     HWND hwnd;
     HDC hdc;

@@ -30,12 +30,9 @@ void Map::resolveMap(){
 		}
 		fileTextUnit[unitCount] += fileText[index];
 	}
-	//work break
-	/*
-	LOG(fileTextUnit[0]);
-	LOG(fileTextUnit[1]);
+    this->width  = stoi(fileTextUnit[0], NULL);
+    this->height = stoi(fileTextUnit[1], NULL);
 	LOG(fileTextUnit[2]);
-	*/
 }
 
 Map::~Map()

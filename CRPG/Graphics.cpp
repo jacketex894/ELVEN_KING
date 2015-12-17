@@ -27,7 +27,7 @@ void Graphics::setScreen()
 }
 
 void Graphics::update() {
-    //draw something
+    //to begin draw 
     this->hMemoryDC = BeginPaint(this->hwnd, &this->paintStruct);
     //clear screen
     FillRect(this->hMemoryDC, &this->gameScreen, this->hBrush);
@@ -39,7 +39,12 @@ void Graphics::update() {
 
 void Graphics::draw() {
    // LOG("DRAW");
-    Ellipse(this->hMemoryDC,this->gameScreen.left + dx,
-                            this->gameScreen.top  + dy,
-                            100,100);
+    if (gdx < dx) gdx += (dx - gdx) / 2;
+    if (gdx > dx) gdx -= (gdx - dx) / 2;
+    if (gdy < dy) gdy += (dy - gdy) / 2;
+    if (gdy > dy) gdy -= (gdy - dy) / 2;
+    Ellipse(this->hMemoryDC,this->gameScreen.left + gdx,
+                            this->gameScreen.top  + gdy,
+                            this->gameScreen.left + gdx + 64,
+                            this->gameScreen.top  + gdy + 64);
 }
