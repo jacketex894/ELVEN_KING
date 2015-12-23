@@ -14,8 +14,6 @@ void Graphics::initialize(HWND hwnd)
     hBitmapHeight = this->gameScreen.bottom - this->gameScreen.top;
     this->hBitmap = CreateCompatibleBitmap(this->hdc,hBitmapWidth,hBitmapHeight);
     SelectObject(this->hMemoryDC,this->hBitmap);
-    //initialize brush
-    hBrush = CreateSolidBrush(RGB(255, 255, 255));
 }
 
 void Graphics::setScreen()
@@ -29,8 +27,8 @@ void Graphics::setScreen()
 void Graphics::update() {
     //to begin draw 
     this->hMemoryDC = BeginPaint(this->hwnd, &this->paintStruct);
-    //clear screen
-    FillRect(this->hMemoryDC, &this->gameScreen, this->hBrush);
+	//clear screen
+	FillRect(this->hMemoryDC, &this->gameScreen, this->hBrush);
     this->draw();
     EndPaint(this->hwnd, &this->paintStruct);
     //copy memory hdc to real hdc
@@ -38,13 +36,12 @@ void Graphics::update() {
 }
 
 void Graphics::draw() {
-   // LOG("DRAW");
     if (gdx < dx) gdx += (dx - gdx) / 2;
     if (gdx > dx) gdx -= (gdx - dx) / 2;
     if (gdy < dy) gdy += (dy - gdy) / 2;
     if (gdy > dy) gdy -= (gdy - dy) / 2;
     Ellipse(this->hMemoryDC,this->gameScreen.left + gdx,
                             this->gameScreen.top  + gdy,
-                            this->gameScreen.left + gdx + 64,
-                            this->gameScreen.top  + gdy + 64);
+                            this->gameScreen.left + gdx + 32,
+                            this->gameScreen.top  + gdy + 32);
 }

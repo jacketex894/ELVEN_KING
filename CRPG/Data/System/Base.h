@@ -4,9 +4,9 @@
 
 #define UPDATE_FRAME    24
 
-#define LOGIC_WIDTH		62
-#define LOGIC_HEIGHT	38
+#define LOGIC_WIDTH		37
+#define LOGIC_HEIGHT	25
 
-#define BLOCK_SIZE      16
+#define BLOCK_SIZE      32
 #define SCREEN_WIDTH	LOGIC_WIDTH * BLOCK_SIZE
 #define SCREEN_HEIGHT	LOGIC_HEIGHT * BLOCK_SIZE

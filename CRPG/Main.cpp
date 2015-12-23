@@ -40,7 +40,7 @@ int WINAPI WinMain
 
 	if(!hwndWindow) LOG("HWND Failed!");
 
-	Map no1("ex1");
+	//Map no1("ex1");
 	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
 	//LOG(database.message[1]);
 
@@ -49,9 +49,10 @@ int WINAPI WinMain
 
     SetTimer(hwndWindow,1, UPDATE_FRAME,(TIMERPROC)update);
 
-    //Update Screen 
-   // InvalidateRect(hwndWindow,&graphics.gameScreen,TRUE);
-	
+	//play tilte music
+	//audio.setBGM("title.wav");
+
+	//Update Screen 
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
 		TranslateMessage(&message);
@@ -86,4 +87,10 @@ LRESULT CALLBACK MainProc
 		return 0;
 	};
 	return DefWindowProc(hwnd, iMsg, wParam, lParam);
+}
+
+TIMERPROC update(HWND hwnd, UINT sMsg, UINT_PTR idEvent, DWORD dwTime) {
+	InvalidateRect(hwnd, &graphics.gameScreen, TRUE);
+	UpdateWindow(hwnd);
+	return 0;
 }
