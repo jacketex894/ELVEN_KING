@@ -171,8 +171,6 @@
     <ClInclude Include="Data\System\Sqlite\sqlite3.h" />
     <ClInclude Include="Data\System\Stage.h" />
     <ClInclude Include="Data\System\Title.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Map\ex1.map" />

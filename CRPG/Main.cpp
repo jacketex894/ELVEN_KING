@@ -48,17 +48,11 @@ int WINAPI WinMain
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
-    
-
-<<<<<<< HEAD
 	//play tilte music
-	//audio.setBGM("title.wav");
+	audio.setBGM("title.wav");
 
-	//Update Screen 
-=======
     //Update Screen
     SetTimer(hwndWindow, 1, UPDATE_FRAME, (TIMERPROC)update);
->>>>>>> cf33768a0fed3abee05a8bad41d02bed28f3cf75
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
 		TranslateMessage(&message);
@@ -80,7 +74,6 @@ LRESULT CALLBACK MainProc
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
-        
         switch (wParam)
         {
         case 37: graphics.dx -= 32; return 0;

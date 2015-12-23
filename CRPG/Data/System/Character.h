@@ -52,7 +52,6 @@ Character::Character(int id) {
 
 int Character::maxHp() { return this->hpP[0] * pow(this->level, 2) + this->hpP[1] * this->level + this->hpP[2]; }
 int Character::maxMp() { return this->mpP[0] * pow(this->level, 2) + this->mpP[1] * this->level + this->mpP[2]; }
-int Character::maxMp() { return this->mpP[0] * pow(this->level, 2) + this->mpP[1] * this->level + this->mpP[2]; }
 
 void Character::levelUp() {
     //setData(this->maxHp, database.sql());

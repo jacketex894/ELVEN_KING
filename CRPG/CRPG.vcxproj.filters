@@ -1,26 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="原始程式檔">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="標頭檔">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="資源檔">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="資源檔\地圖">
-      <UniqueIdentifier>{aaabc6b0-d1a6-47c9-aae5-7050ea399764}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="資源檔\資料庫">
-      <UniqueIdentifier>{f3abcb05-4c82-41e4-9dcc-ebe6919cd5c1}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Database.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
@@ -28,6 +8,9 @@
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="File.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
@@ -39,12 +22,18 @@
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics.cpp">
-      <Filter>原始程式檔</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data\System\Audio.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
     <ClInclude Include="Data\System\Base.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Character.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Control.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Database.h">
@@ -59,29 +48,19 @@
     <ClInclude Include="Data\System\Global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Item.h">
+    <ClInclude Include="Data\System\Graphics.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Main.h">
+    <ClInclude Include="Data\System\Item.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Map.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Sqlite\sqlite3.h">
+    <ClInclude Include="Data\System\Main.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Graphics.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Data\System\Audio.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="resource1.h">
+    <ClInclude Include="Data\System\Selection.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Stage.h">
@@ -90,22 +69,33 @@
     <ClInclude Include="Data\System\Title.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Selection.h">
-=======
-    <ClInclude Include="Data\System\Character.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="Data\System\Control.h">
->>>>>>> cf33768a0fed3abee05a8bad41d02bed28f3cf75
+    <ClInclude Include="Data\System\Sqlite\sqlite3.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\System\Database.db">
-      <Filter>資源檔\資料庫</Filter>
-    </None>
     <None Include="Data\Map\ex1.map">
-      <Filter>資源檔\地圖</Filter>
+      <Filter>資源\地圖檔</Filter>
     </None>
+    <None Include="Data\System\Database.db">
+      <Filter>資源\資料庫</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="原始程式檔">
+      <UniqueIdentifier>{53130538-0ffc-4dff-8fda-98c9876146c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{dbc75844-5ac3-4490-a9eb-a397bc615f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源">
+      <UniqueIdentifier>{129d45e4-30b0-42e9-97e6-11a665cdeafd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源\地圖檔">
+      <UniqueIdentifier>{1e39cbce-7606-477b-8d05-df864545ee47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源\資料庫">
+      <UniqueIdentifier>{92e8000f-01e2-4f0b-88b3-9044d45fc1e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
