@@ -74,6 +74,7 @@
     <ClInclude Include="Data\System\Graphics.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Data\System\Audio.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -90,6 +91,12 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Selection.h">
+=======
+    <ClInclude Include="Data\System\Character.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Control.h">
+>>>>>>> cf33768a0fed3abee05a8bad41d02bed28f3cf75
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,8 @@
 #include "Global.h"
 #include "Debug.h"
 #include "Map.h"
+#include "Control.h"
+#include "Character.h"
 
 int WINAPI WinMain(HINSTANCE ,HINSTANCE ,LPSTR ,int);
 LRESULT CALLBACK MainProc(HWND, UINT, WPARAM, LPARAM);

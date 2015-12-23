@@ -43,16 +43,22 @@ int WINAPI WinMain
 	//Map no1("ex1");
 	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
 	//LOG(database.message[1]);
+    Character yangyu(1);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
-    SetTimer(hwndWindow,1, UPDATE_FRAME,(TIMERPROC)update);
+    
 
+<<<<<<< HEAD
 	//play tilte music
 	//audio.setBGM("title.wav");
 
 	//Update Screen 
+=======
+    //Update Screen
+    SetTimer(hwndWindow, 1, UPDATE_FRAME, (TIMERPROC)update);
+>>>>>>> cf33768a0fed3abee05a8bad41d02bed28f3cf75
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
 		TranslateMessage(&message);
@@ -74,6 +80,7 @@ LRESULT CALLBACK MainProc
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
+        
         switch (wParam)
         {
         case 37: graphics.dx -= 32; return 0;
