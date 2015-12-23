@@ -40,18 +40,18 @@ int WINAPI WinMain
 
 	if(!hwndWindow) LOG("HWND Failed!");
 
-	Map no1("ex1");
+	//Map no1("ex1");
 	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
 	//LOG(database.message[1]);
+    Character yangyu(1);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
-    SetTimer(hwndWindow,1, UPDATE_FRAME,(TIMERPROC)update);
+    
 
-    //Update Screen 
-   // InvalidateRect(hwndWindow,&graphics.gameScreen,TRUE);
-	
+    //Update Screen
+    SetTimer(hwndWindow, 1, UPDATE_FRAME, (TIMERPROC)update);
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
 		TranslateMessage(&message);
@@ -73,6 +73,7 @@ LRESULT CALLBACK MainProc
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
+        
         switch (wParam)
         {
         case 37: graphics.dx -= 32; return 0;

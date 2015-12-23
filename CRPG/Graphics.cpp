@@ -38,13 +38,14 @@ void Graphics::update() {
 }
 
 void Graphics::draw() {
+    int speed = 4;
    // LOG("DRAW");
-    if (gdx < dx) gdx += (dx - gdx) / 2;
-    if (gdx > dx) gdx -= (gdx - dx) / 2;
-    if (gdy < dy) gdy += (dy - gdy) / 2;
-    if (gdy > dy) gdy -= (gdy - dy) / 2;
+    if (gdx < dx) gdx += speed; //(dx - gdx) / 2;
+    if (gdx > dx) gdx -= speed; //(gdx - dx) / 2;
+    if (gdy < dy) gdy += speed; //(dy - gdy) / 2;
+    if (gdy > dy) gdy -= speed; //(gdy - dy) / 2;
     Ellipse(this->hMemoryDC,this->gameScreen.left + gdx,
                             this->gameScreen.top  + gdy,
-                            this->gameScreen.left + gdx + 64,
-                            this->gameScreen.top  + gdy + 64);
+                            this->gameScreen.left + gdx + 32,
+                            this->gameScreen.top  + gdy + 32);
 }

@@ -74,6 +74,12 @@
     <ClInclude Include="Data\System\Graphics.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="Data\System\Character.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Control.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\System\Database.db">
