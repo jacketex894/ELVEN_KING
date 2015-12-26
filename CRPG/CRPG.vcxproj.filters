@@ -72,6 +72,9 @@
     <ClInclude Include="Data\System\StageList\Title.h">
       <Filter>標頭檔\場景</Filter>
     </ClInclude>
+    <ClInclude Include="Data\System\Change.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Map\ex1.map">

@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data\System\Base.h" />
+    <ClInclude Include="Data\System\Change.h" />
     <ClInclude Include="Data\System\Character.h" />
     <ClInclude Include="Data\System\Control.h" />
     <ClInclude Include="Data\System\Database.h" />

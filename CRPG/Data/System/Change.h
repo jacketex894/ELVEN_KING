@@ -5,33 +5,33 @@
 
 using namespace std;
 
-
-string WcS(wstring load ) // wchar→string  load為資料庫所讀出的資料
+// wstring→string
+string wStrToStr(wstring data)
 {
-string Data;
-wstring ws(load);   
-string Data(ws.begin(), ws.end());
-return  Data;
+	string str(data.begin(), data.end());
+	return str;
 }
 
-int WcI(wstring load) // wchar→int
+// wstring→int
+int wStrToInt(wstring data)
 {
-int iData;
-iData = atoi(WcS(load).c_str());
-return  iData;
+	int iData = atoi(wStrToStr(data).c_str());
+	return  iData;
 }
 
-wchar_t ScW(string msg)//string→wchar
+// string→wchar
+wchar_t strToWChar(string data)
 {
-wchar_t str[256];
-wsprintfW(str,L"%hs",msg.c_str());
-return str[256];
+	wchar_t wstr[256];
+	wsprintfW(wstr,L"%hs", data.c_str());
+	return wstr[256];
 }
 
-wchar_t ScW(int msg)//int→wchar
+// int→wchar
+wchar_t intToWChar(int data)
 {
-wchar_t str[256];
-wsprintfW(str, L"%d", msg);
-return str[256];
+	wchar_t wstr[256];
+	wsprintfW(wstr, L"%d", data);
+	return wstr[256];
 }
 
