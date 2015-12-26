@@ -155,6 +155,7 @@
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data\Graphics\Icon\resource.h" />
     <ClInclude Include="Data\System\Base.h" />
     <ClInclude Include="Data\System\Change.h" />
     <ClInclude Include="Data\System\Character.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Data\System\File.h" />
     <ClInclude Include="Data\System\Global.h" />
     <ClInclude Include="Data\System\Graphics.h" />
+    <ClInclude Include="Data\System\Image.h" />
     <ClInclude Include="Data\System\Item.h" />
     <ClInclude Include="Data\System\Main.h" />
     <ClInclude Include="Data\System\Map.h" />
@@ -176,6 +178,13 @@
   <ItemGroup>
     <None Include="Data\Map\ex1.map" />
     <None Include="Data\System\Database.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\Graphics\Icon\icon.ico" />
+    <Image Include="Data\Graphics\Icon\icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Data\Graphics\Icon\CRPG.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,7 +15,7 @@ int WINAPI WinMain
 	window.cbWndExtra		= 0;
 	window.hInstance		= hCurrentInstance;
 	window.lpfnWndProc		= MainProc;
-	window.hIcon			= LoadIcon(hCurrentInstance, IDI_APPLICATION);
+	window.hIcon			= LoadIcon(hCurrentInstance, MAKEINTRESOURCE(IDI_ICON1));
 	window.hIconSm			= LoadIcon(hCurrentInstance, IDI_APPLICATION);
 	window.hCursor			= LoadCursor(NULL, IDC_ARROW);
 	window.style			= CS_SAVEBITS;

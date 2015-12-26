@@ -20,7 +20,7 @@
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
-      <Filter>資源\資料庫</Filter>
+      <Filter>資源檔\資料庫</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,7 +67,7 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Sqlite\sqlite3.h">
-      <Filter>資源\資料庫</Filter>
+      <Filter>資源檔\資料庫</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\StageList\Title.h">
       <Filter>標頭檔\場景</Filter>
@@ -75,13 +75,19 @@
     <ClInclude Include="Data\System\Change.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="Data\System\Image.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Graphics\Icon\resource.h">
+      <Filter>資源檔\圖示</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Map\ex1.map">
-      <Filter>資源\地圖檔</Filter>
+      <Filter>資源檔\地圖檔</Filter>
     </None>
     <None Include="Data\System\Database.db">
-      <Filter>資源\資料庫</Filter>
+      <Filter>資源檔\資料庫</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -91,17 +97,31 @@
     <Filter Include="標頭檔">
       <UniqueIdentifier>{dbc75844-5ac3-4490-a9eb-a397bc615f6d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="資源">
-      <UniqueIdentifier>{129d45e4-30b0-42e9-97e6-11a665cdeafd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="資源\地圖檔">
-      <UniqueIdentifier>{1e39cbce-7606-477b-8d05-df864545ee47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="資源\資料庫">
-      <UniqueIdentifier>{92e8000f-01e2-4f0b-88b3-9044d45fc1e9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="標頭檔\場景">
       <UniqueIdentifier>{a5a1af24-7f44-44c7-b032-05e665cf08cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{129d45e4-30b0-42e9-97e6-11a665cdeafd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\地圖檔">
+      <UniqueIdentifier>{1e39cbce-7606-477b-8d05-df864545ee47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\資料庫">
+      <UniqueIdentifier>{92e8000f-01e2-4f0b-88b3-9044d45fc1e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="資源檔\圖示">
+      <UniqueIdentifier>{cd0958ba-35ec-4626-8d53-ae9edbb379b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Data\Graphics\Icon\CRPG.rc">
+      <Filter>資源檔\圖示</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\Graphics\Icon\icon.ico">
+      <Filter>資源檔\圖示</Filter>
+    </Image>
+    <Image Include="Data\Graphics\Icon\icon1.ico" />
   </ItemGroup>
 </Project>

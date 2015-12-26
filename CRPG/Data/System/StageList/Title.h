@@ -21,4 +21,5 @@ void Title::update(){
 }
 
 void Title::updateGraphics() {
+	
 }

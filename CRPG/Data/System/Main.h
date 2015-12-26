@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include "../Graphics/Icon/resource.h"
 
 #include "Base.h"
 #include "Global.h"
