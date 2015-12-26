@@ -43,13 +43,15 @@ int WINAPI WinMain
 	//Map no1("ex1");
 	//database.sql("SELECT * FROM `Item` WHERE `id` = '1'");
 	//LOG(database.message[1]);
-    Character yangyu(1);
+    //Character yangyu(1);
 
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
-	//play tilte music
-	audio.setBGM("title.wav");
+	//To Title Screen
+	stage = new Title;
+	string options[3] = { NEW_GAME, LOAD_GAME, EXIT_GAME };
+	stage->setMenu(options);
 
     //Update Screen
     SetTimer(hwndWindow, 1, UPDATE_FRAME, (TIMERPROC)update);
@@ -71,18 +73,14 @@ LRESULT CALLBACK MainProc
 		return 0;
     case WM_TIMER:
     case WM_PAINT:
+		if (stage != NULL) stage->update();
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
-        switch (wParam)
-        {
-        case 37: graphics.dx -= 32; return 0;
-        case 38: graphics.dy -= 32; return 0;
-        case 39: graphics.dx += 32; return 0;
-        case 40: graphics.dy += 32; return 0;
-        }
+		control.wParam = wParam;
         return 0;
 	case WM_DESTROY:
+		delete stage;
         exit(0);
 		return 0;
 	};

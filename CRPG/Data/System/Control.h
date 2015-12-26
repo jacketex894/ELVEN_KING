@@ -2,12 +2,11 @@
 #include <Windows.h>
 
 class Control {
-    private:
-        bool bBusy;
-        WPARAM wParam;
     public:
-        void setControl(WPARAM);
+		WPARAM wParam;
+		bool inputKey(int);
 };
 
-void Control::setControl(WPARAM wParam) {
-}
+bool Control::inputKey(int input) {
+	return (this->wParam == input);
+};

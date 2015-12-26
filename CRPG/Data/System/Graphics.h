@@ -7,11 +7,9 @@ class Graphics
 {
 public:
     void initialize(HWND);
-    void draw();
     void update();
+	void (*draw)() = NULL;
     RECT gameScreen;
-    int dx = 0, dy = 0;
-    int gdx = 0, gdy = 0;
 private:
     HWND hwnd;
     HDC hdc;
@@ -23,3 +21,4 @@ private:
     int hBitmapHeight;
     void setScreen();
 };
+

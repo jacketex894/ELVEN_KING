@@ -20,7 +20,7 @@
       <Filter>原始程式檔</Filter>
     </ClCompile>
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
-      <Filter>原始程式檔</Filter>
+      <Filter>資源\資料庫</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,11 +66,11 @@
     <ClInclude Include="Data\System\Stage.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Title.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="Data\System\Sqlite\sqlite3.h">
-      <Filter>標頭檔</Filter>
+      <Filter>資源\資料庫</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\StageList\Title.h">
+      <Filter>標頭檔\場景</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,9 @@
     </Filter>
     <Filter Include="資源\資料庫">
       <UniqueIdentifier>{92e8000f-01e2-4f0b-88b3-9044d45fc1e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="標頭檔\場景">
+      <UniqueIdentifier>{a5a1af24-7f44-44c7-b032-05e665cf08cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -10,3 +10,7 @@
 #define BLOCK_SIZE      32
 #define SCREEN_WIDTH	LOGIC_WIDTH * BLOCK_SIZE
 #define SCREEN_HEIGHT	LOGIC_HEIGHT * BLOCK_SIZE
+
+#define NEW_GAME		"新的冒險"
+#define LOAD_GAME		"讀取紀錄"
+#define EXIT_GAME		"離開遊戲"

@@ -3,10 +3,12 @@
 
 #include "Base.h"
 #include "Global.h"
-#include "Debug.h"
-#include "Map.h"
-#include "Control.h"
-#include "Character.h"
+#include "Stage.h"
+
+//Stage Class
+#include "StageList\Title.h"
+
+Stage *stage = NULL;
 
 int WINAPI WinMain(HINSTANCE ,HINSTANCE ,LPSTR ,int);
 LRESULT CALLBACK MainProc(HWND, UINT, WPARAM, LPARAM);
