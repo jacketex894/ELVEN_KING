@@ -1,15 +1,10 @@
 #pragma once
 #include <windows.h>
-#include "../Graphics/Icon/resource.h"
-
+#include "../resource.h"
 #include "Base.h"
 #include "Global.h"
-#include "Stage.h"
 
-//Stage Class
-#include "StageList\Title.h"
-
-Stage *stage = NULL;
+Stage *tempStage = stage;
 
 int WINAPI WinMain(HINSTANCE ,HINSTANCE ,LPSTR ,int);
 LRESULT CALLBACK MainProc(HWND, UINT, WPARAM, LPARAM);

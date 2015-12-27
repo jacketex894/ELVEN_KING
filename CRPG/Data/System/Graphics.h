@@ -2,14 +2,15 @@
 #include <windows.h>
 #include "Base.h"
 #include "Debug.h"
+#include "Image.h"
 
 class Graphics
 {
 public:
     void initialize(HWND);
     void update();
-	void (*draw)() = NULL;
     RECT gameScreen;
+	Image *image = NULL;
 private:
     HWND hwnd;
     HDC hdc;
@@ -20,5 +21,6 @@ private:
     int hBitmapWidth;
     int hBitmapHeight;
     void setScreen();
+	void drawImage();
 };
 

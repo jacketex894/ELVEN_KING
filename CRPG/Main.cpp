@@ -49,12 +49,11 @@ int WINAPI WinMain
 	UpdateWindow(hwndWindow);
 
 	//To Title Screen
-	stage = new Title;
-	string options[3] = { NEW_GAME, LOAD_GAME, EXIT_GAME };
-	stage->setMenu(options);
+	stage = new Title();
 
     //Update Screen
-    SetTimer(hwndWindow, 1, UPDATE_FRAME, (TIMERPROC)update);
+    SetTimer(hwndWindow, 1, 1000/UPDATE_FRAME, (TIMERPROC)update);
+
 	while (GetMessage(&message, NULL, 0, 0)) {	
 		DispatchMessage(&message);
 		TranslateMessage(&message);
@@ -74,10 +73,14 @@ LRESULT CALLBACK MainProc
     case WM_TIMER:
     case WM_PAINT:
 		if (stage != NULL) stage->update();
+		if (tempStage != stage) {
+			audio.setBGM(stage->bgm);
+			tempStage = stage;
+		}
 		graphics.update();
 		return 0;
     case WM_KEYDOWN:
-		control.wParam = wParam;
+		control.key = wParam;
         return 0;
 	case WM_DESTROY:
 		delete stage;

@@ -1,25 +1,34 @@
 #pragma once
 #include "../Stage.h"
-
-#define TITLE_BGM		"title.wav"
-#define TITLE_IMAGE		"title.png"
+#include "../Base.h"
+#include "../Image.h"
 
 class Title :public Stage{
 public:
 	Title();
 	void update();
-	static void updateGraphics();
 private:
-	
+	Image *background;
 };
 
 Title::Title() :Stage(TITLE_IMAGE,TITLE_BGM) {
-	graphics.draw = updateGraphics;
+	string options[3] = { NEW_GAME, LOAD_GAME, EXIT_GAME };
+	this->setMenu(options);
+	this->background = new Image(TITLE_IMAGE);
 }
 
 void Title::update(){
+	switch (control.key)
+	{
+	case VK_UP: 
+		this->selection->previousIndex();
+		break;
+	case VK_DOWN:
+		this->selection->nextIndex();
+		break;
+	case VK_ENTER:
+		
+		break;
+	}
 }
 
-void Title::updateGraphics() {
-	
-}

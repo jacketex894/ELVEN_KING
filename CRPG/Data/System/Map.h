@@ -1,9 +1,7 @@
 #pragma once
 #include <iostream>
+#include "Base.h"
 #include "File.h"
-
-#define SEPARATE	'#'
-#define EXTENSION	".map"
 
 using namespace std;
 

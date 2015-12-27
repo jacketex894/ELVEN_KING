@@ -22,6 +22,18 @@
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
       <Filter>資源檔\資料庫</Filter>
     </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Selection.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data\System\Audio.h">
@@ -78,8 +90,8 @@
     <ClInclude Include="Data\System\Image.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\Graphics\Icon\resource.h">
-      <Filter>資源檔\圖示</Filter>
+    <ClInclude Include="Data\resource.h">
+      <Filter>資源檔</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,16 +124,18 @@
     <Filter Include="資源檔\圖示">
       <UniqueIdentifier>{cd0958ba-35ec-4626-8d53-ae9edbb379b7}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Data\Graphics\Icon\CRPG.rc">
-      <Filter>資源檔\圖示</Filter>
-    </ResourceCompile>
+    <Filter Include="資源檔\地圖圖塊">
+      <UniqueIdentifier>{fbe9f907-5afe-4914-a532-d47d93450307}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Data\Graphics\Icon\icon.ico">
       <Filter>資源檔\圖示</Filter>
     </Image>
-    <Image Include="Data\Graphics\Icon\icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Data\CRPG.rc">
+      <Filter>資源檔</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

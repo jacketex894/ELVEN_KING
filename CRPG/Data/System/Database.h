@@ -1,12 +1,10 @@
 #pragma once
 #include <iostream>
+#include "Base.h"
 #include "Debug.h"
 #include "Sqlite\sqlite3.h"
 
 using namespace std;
-
-#define DATABASE_NAME		"Database.db"
-#define DATABASE_ADDRESS	"../CRPG/Data/System/"
 
 int sqlCallback(void*, int, char**, char**);
 

@@ -3,10 +3,8 @@
 #include <cstdlib>
 #include <windows.h>
 #include <mmsystem.h>
+#include "Base.h"
 #pragma comment(lib, "WINMM.LIB")
-
-#define AUDIO_BGM_ADDRESS	"../CRPG/Data/Audio/BGM/"
-#define AUDIO_SE_ADDRESS	"../CRPG/Data/Audio/SE/"
 
 using namespace std;
 
@@ -28,25 +26,3 @@ class Audio {
 		void playSE();
 		void stopSE();
 };
-
-Audio::Audio() { 
-	playing = false;
-}
-
-void Audio::setBGM(string address) {
-	wchar_t fileName[256];
-	address = this->BGMFolder + address;
-	wsprintfW(fileName, L"%hs",address.c_str());
-	BGMName = fileName;
-	playBGM();
-}
-
-void Audio::playBGM() {
-	PlaySound(this->BGMName, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP | SND_ALIAS);
-	this->playing = true;
-}
-
-void Audio::stopBGM() {
-	PlaySound(NULL, NULL, SND_ASYNC);
-	this->playing = false;
-}

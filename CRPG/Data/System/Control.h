@@ -1,12 +1,8 @@
 #pragma once
 #include <Windows.h>
+#define VK_ENTER VK_RETURN
 
 class Control {
     public:
-		WPARAM wParam;
-		bool inputKey(int);
-};
-
-bool Control::inputKey(int input) {
-	return (this->wParam == input);
+		WPARAM key;
 };

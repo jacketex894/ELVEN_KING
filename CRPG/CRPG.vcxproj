@@ -146,16 +146,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="Data\System\Sqlite\sqlite3.c" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Image.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Selection.cpp" />
+    <ClCompile Include="Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data\Graphics\Icon\resource.h" />
+    <ClInclude Include="Data\resource.h" />
     <ClInclude Include="Data\System\Base.h" />
     <ClInclude Include="Data\System\Change.h" />
     <ClInclude Include="Data\System\Character.h" />
@@ -181,10 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Data\Graphics\Icon\icon.ico" />
-    <Image Include="Data\Graphics\Icon\icon1.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Data\Graphics\Icon\CRPG.rc" />
+    <ResourceCompile Include="Data\CRPG.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
