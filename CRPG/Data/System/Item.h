@@ -5,6 +5,7 @@
 #include "Database.h"
 #include "Global.h"
 #include "Debug.h"
+#include "Change.h"
 using namespace std;
 
 class Item
@@ -60,70 +61,38 @@ private:
 //皆為從資料庫讀取並存到變數中
 Item::Item(int iId)
 {
-	char cId[20];                     //char  方便轉換形態; 
-	string sHp;                       //sHp   方便轉換形態      
-	string sMp;                       
-	string sCost;                      
-	string sPowerup;
-	string sAgileup;
-	string sLuckyup;
-	string sDefenseup;
-	string sMagicup;
-	string sMagicPowerup;
-	string sMagicDefenseup;
-	string sPoisonClaen;
+char cId[20];                     //char  方便轉換形態; 
+string sHp;                       //sHp   方便轉換形態      
+string sMp;                       
+string sCost;                      
+string sPowerup;
+string sAgileup;
+string sLuckyup;
+string sDefenseup;
+string sMagicup;
+string sMagicPowerup;
+string sMagicDefenseup;
+string sPoisonClaen;
+	
+
+sprintf_s(cId, "%d", iId);        //iId轉換成char
+string sCin = sInstruction + cId;
+
+database.sql(sCin);
 
 
-	sprintf_s(cId, "%d", iId);        //iId轉換成char
-	string sCin = sInstruction + cId;
+sId = wStrToStr(database.message[1]);
+iHp = wStrToInt(database.message[2]);
+iMp = wStrToInt(database.message[3]);
+iCost = wStrToInt(database.message[5]);
+iPowerup = wStrToInt(database.message[6]);
+iAgileup = wStrToInt(database.message[7]);
+iLuckyup = wStrToInt(database.message[8]);
+iDefenseup = wStrToInt(database.message[9]);
+iMagicup = wStrToInt(database.message[10]);
+iMagicDefenseup = wStrToInt(database.message[11]);
+iTime = wStrToInt(database.message[12]);
+bPoisonClaen = wStrToInt(database.message[13]);
 
-	database.sql(sCin);
 
-
-	wstring ws(database.message[1]);   //寬字元轉換
-	string sId(ws.begin(), ws.end());
-
-	wstring ws(database.message[2]);   //寬字元轉換
-	string sHp(ws.begin(), ws.end());
-	iHp = atoi(sHp.c_str());          //string→int
-
-	wstring ws(database.message[3]);   
-	string sMp(ws.begin(), ws.end());
-	iMp = atoi(sMp.c_str());          
-
-	wstring ws(database.message[5]);   
-	string sCost(ws.begin(), ws.end());
-	iCost = atoi(sCost.c_str());       
-
-	wstring ws(database.message[6]);   
-	string sPowerup(ws.begin(), ws.end());
-	iPowerup = atoi(sPowerup.c_str());      
-
-	wstring ws(database.message[7]);  
-	string sAgileup(ws.begin(), ws.end());
-	iAgileup = atoi(sAgileup.c_str());       
-
-	wstring ws(database.message[8]);   
-	string sLuckyup(ws.begin(), ws.end());
-	iLuckyup = atoi(sLuckyup.c_str());      
-
-	wstring ws(database.message[9]);  
-	string sDefenseup(ws.begin(), ws.end());
-	iDefenseup = atoi(sDefenseup.c_str());      
-
-	wstring ws(database.message[10]);   
-	string sMagicup(ws.begin(), ws.end());
-	iMagicup = atoi(sMagicup.c_str());      
-
-	wstring ws(database.message[11]);   
-	string sMagicPowerup(ws.begin(), ws.end());
-	iMagicPowerup = atoi(sMagicPowerup.c_str());      
-
-	wstring ws(database.message[12]);   
-	string sMagicDefenseup(ws.begin(), ws.end());
-	iMagicDefenseup = atoi(sMagicDefenseup.c_str());   
-
-	wstring ws(database.message[13]);
-	string sPoisonClaen(ws.begin(), ws.end());
-	bPoisonClaen = atoi(sPoisonClaen.c_str());
 }
