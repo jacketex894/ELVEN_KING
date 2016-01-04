@@ -48,9 +48,6 @@ int WINAPI WinMain
 	ShowWindow(hwndWindow, SW_MAXIMIZE);
 	UpdateWindow(hwndWindow);
 
-	//To Title Screen
-	stage = new Title();
-
     //Update Screen
     SetTimer(hwndWindow, 1, 1000/UPDATE_FRAME, (TIMERPROC)update);
 
@@ -69,6 +66,7 @@ LRESULT CALLBACK MainProc
 	switch (iMsg) {
 	case WM_CREATE:
         graphics.initialize(hwnd);
+		stage = new Title(); //To Title
 		return 0;
     case WM_TIMER:
     case WM_PAINT:

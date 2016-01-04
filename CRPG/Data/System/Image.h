@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <windows.h>
+#include "Base.h"
 #include "Debug.h"
 
 using namespace std;

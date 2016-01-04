@@ -27,6 +27,7 @@
 
 #define AUDIO_BGM_ADDRESS	"../CRPG/Data/Audio/BGM/"
 #define AUDIO_SE_ADDRESS	"../CRPG/Data/Audio/SE/"
+#define GRAPHICS_ADDRESS	"../CRPG/Data/Graphics/Picture/"
 
 #define TITLE_BGM			"title.wav"
-#define TITLE_IMAGE			"../CRPG/Data/Graphics/Picture/title.png"
+#define TITLE_IMAGE			"title.bmp"
