@@ -7,15 +7,16 @@ Image::Image(string location) {
 void Image::setImage(string location) {
 	this->x = 0;
 	this->y = 0;
-	this->name = location;
+	this->name = this->location + location;
 	wchar_t fileName[256];
 	wsprintfW(fileName, L"%hs", (this->name).c_str());
-	this->hBitmap = (HBITMAP)LoadImage(NULL, fileName, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    this->hBitmap = (HBITMAP)LoadImage(NULL, fileName, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 	if (this->hBitmap == NULL){
 		LOG("load " + this->name + " ERROR!");
 	}
 	else {
-		SelectObject(this->hDC, &this->bitmap);
+        this->hDc = CreateCompatibleDC(NULL);
+        SelectObject(hDc, this->hBitmap);
 		GetObject(this->hBitmap, sizeof(BITMAP), &this->bitmap);
 		this->width = this->bitmap.bmWidth;
 		this->height = this->bitmap.bmHeight;

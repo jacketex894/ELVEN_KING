@@ -184,10 +184,10 @@
     <None Include="Data\System\Database.db" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Data\Graphics\Icon\icon.ico" />
+    <ResourceCompile Include="Data\CRPG.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Data\CRPG.rc" />
+    <Image Include="Data\Graphics\Icon\icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,7 +18,7 @@ int WINAPI WinMain
 	window.hIcon			= LoadIcon(hCurrentInstance, MAKEINTRESOURCE(IDI_ICON1));
 	window.hIconSm			= LoadIcon(hCurrentInstance, IDI_APPLICATION);
 	window.hCursor			= LoadCursor(NULL, IDC_ARROW);
-	window.style			= CS_SAVEBITS;
+	window.style			= CS_NOCLOSE;
 	window.hbrBackground	= (HBRUSH)GetStockObject(BLACK_BRUSH);
 	window.lpszMenuName		= NULL;
 	window.lpszClassName	= CLASSNAME;
@@ -72,7 +72,11 @@ LRESULT CALLBACK MainProc
     case WM_PAINT:
 		if (stage != NULL) stage->update();
 		if (tempStage != stage) {
+            //change BGM
 			audio.setBGM(stage->bgm);
+            //change Image List
+            graphics.image = &stage->image;
+            graphics.imageCount = &stage->imageCount;
 			tempStage = stage;
 		}
 		graphics.update();
@@ -89,7 +93,8 @@ LRESULT CALLBACK MainProc
 }
 
 TIMERPROC update(HWND hwnd, UINT sMsg, UINT_PTR idEvent, DWORD dwTime) {
-	InvalidateRect(hwnd, &graphics.gameScreen, TRUE);
+	InvalidateRect(hwnd, &graphics.gameScreen, FALSE);
+    //InvalidateRect to set FALSE (reDraw Screen?or Not?)
 	UpdateWindow(hwnd);
 	return 0;
 }

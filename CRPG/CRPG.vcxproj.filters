@@ -129,13 +129,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Data\Graphics\Icon\icon.ico">
-      <Filter>資源檔\圖示</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="Data\CRPG.rc">
       <Filter>資源檔</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\Graphics\Icon\icon.ico">
+      <Filter>資源檔\圖示</Filter>
+    </Image>
   </ItemGroup>
 </Project>

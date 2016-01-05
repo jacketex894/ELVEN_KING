@@ -16,9 +16,10 @@ public:
 	int y;
 	int width;
 	int height;
-	HDC hDC;
+    HDC hDc;
 private:
+    const string location = GRAPHICS_ADDRESS;
 	RECT rect;
-	BITMAP bitmap;
-	HBITMAP hBitmap;
+    BITMAP bitmap;
+    HBITMAP hBitmap;
 };
