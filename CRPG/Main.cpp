@@ -75,15 +75,19 @@ LRESULT CALLBACK MainProc
             //change BGM
 			audio.setBGM(stage->bgm);
             //change Image List
-            graphics.image = &stage->image;
-            graphics.imageCount = &stage->imageCount;
+            graphics.image = stage->image;
+            graphics.imageCount = stage->imageCount;
 			tempStage = stage;
 		}
 		graphics.update();
 		return 0;
-    case WM_KEYDOWN:
+	case WM_KEYDOWN:
 		control.key = wParam;
-        return 0;
+		//update now
+		InvalidateRect(hwnd, &graphics.gameScreen, FALSE);
+		UpdateWindow(hwnd);
+		control.key = NULL;
+		return 0;
 	case WM_DESTROY:
 		delete stage;
         exit(0);
@@ -94,7 +98,7 @@ LRESULT CALLBACK MainProc
 
 TIMERPROC update(HWND hwnd, UINT sMsg, UINT_PTR idEvent, DWORD dwTime) {
 	InvalidateRect(hwnd, &graphics.gameScreen, FALSE);
-    //InvalidateRect to set FALSE (reDraw Screen?or Not?)
+    //InvalidateRect to set FALSE (cls Screen?or Not?)
 	UpdateWindow(hwnd);
 	return 0;
 }

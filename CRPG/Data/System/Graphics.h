@@ -10,8 +10,8 @@ public:
     void initialize(HWND);
     void update();
     RECT gameScreen;
-	Image **image = NULL;
-    int *imageCount = NULL;
+	Image *image = NULL;
+    int imageCount = NULL;
 private:
     HWND hwnd;
     HDC hdc;
