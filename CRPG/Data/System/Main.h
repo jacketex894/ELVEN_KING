@@ -3,6 +3,7 @@
 #include "../resource.h"
 #include "Base.h"
 #include "Global.h"
+#include "Stage/Title.h"
 
 Stage *tempStage = stage;
 

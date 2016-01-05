@@ -11,6 +11,3 @@ Graphics graphics;
 Control  control;
 Audio	 audio;
 Stage	*stage = NULL;
-
-//Stage List
-#include "StageList\Title.h"

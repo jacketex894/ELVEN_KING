@@ -154,7 +154,6 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Selection.cpp" />
     <ClCompile Include="Stage.cpp" />
   </ItemGroup>
@@ -172,12 +171,12 @@
     <ClInclude Include="Data\System\Image.h" />
     <ClInclude Include="Data\System\Item.h" />
     <ClInclude Include="Data\System\Main.h" />
-    <ClInclude Include="Data\System\Map.h" />
     <ClInclude Include="Data\System\Audio.h" />
     <ClInclude Include="Data\System\Selection.h" />
     <ClInclude Include="Data\System\Sqlite\sqlite3.h" />
     <ClInclude Include="Data\System\Stage.h" />
-    <ClInclude Include="Data\System\StageList\Title.h" />
+    <ClInclude Include="Data\System\Stage\Map.h" />
+    <ClInclude Include="Data\System\Stage\Title.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Map\ex1.map" />

@@ -51,7 +51,7 @@ int WINAPI WinMain
     //Update Screen
     SetTimer(hwndWindow, 1, 1000/UPDATE_FRAME, (TIMERPROC)update);
 
-	while (GetMessage(&message, NULL, 0, 0)) {	
+	while (GetMessage(&message, NULL, 0, 0)) {
 		DispatchMessage(&message);
 		TranslateMessage(&message);
 	}
