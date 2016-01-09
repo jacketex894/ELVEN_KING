@@ -37,6 +37,12 @@ void Graphics::drawImage() {
 	static int index;
 	for (index = 0; index < this->imageCount; index++) {
 		Image img = this->image[index];
-        BitBlt(this->hMemoryDC, img.x, img.y, img.width, img.height, img.hDc, 0, 0, SRCCOPY);
+        BitBlt(	this->hMemoryDC,
+				img.getX(),
+				img.getY(),
+				img.getWidth(),
+				img.getHeight(),
+				img.getHdc(), 0, 0, SRCCOPY);
+		this->image[index].update();
 	}
 }

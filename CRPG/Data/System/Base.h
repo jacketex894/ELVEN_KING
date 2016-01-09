@@ -15,9 +15,23 @@
 #define LOAD_GAME				"Åª¨ú¬ö¿ý"
 #define EXIT_GAME				"Â÷¶}¹CÀ¸"
 
+#define WINDOW_NEWLINE			'\n'
 //MAP CONTROL
 #define SEPARATE				'#'
 #define EXTENSION				".map"
+
+#define BLOCK_SEPARATE			','
+#define BLOCK_SIGN				'B'
+#define NAME_SIGN				'\"'
+#define INDEX_SIGN				'I'
+#define PASS_SIGN				'P'
+#define LAYER_SIGN				'L'
+#define COUNT_SIGN				'*'
+
+#define RESOLVE_WIDTH			0
+#define RESOLVE_HEIGHT			1
+#define RESOLVE_BLOCK			2
+#define RESOLVE_EVENT			3
 
 #define FILE_MAP				"./Data/Map/"
 #define FILE_DEFAULT			ios::in | ios::out
