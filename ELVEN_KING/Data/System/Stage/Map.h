@@ -22,9 +22,13 @@ public:
 	int getWidth();
 	int getHeight();
 	bool getPass(int,int);
-	void ready(HWND*);
+	
+	void longUpdate();
 	void update();
 private:
+	//========================
+	Enemy *enemys;
+	//========================
 	//base data
 	File* fMap;
 	int width;
@@ -69,8 +73,19 @@ Map::Map(string mapName,string mapBGM) : Stage(mapBGM)
 		//this->image[offset + index].setPosition(SCREEN_LEFT, SCREEN_TOP);
 	}
 	*/
-	this->image->setImage("map_A.bmp");
-
+	//==================================================
+	// GAME DEMO
+	//==================================================
+	// create demo map
+	this->image[0].setImage("map_A.bmp");
+	this->image[0].setPosition(SCREEN_LEFT, SCREEN_TOP);
+	// create actor
+	this->image[1].setImage("actor/downA.bmp");
+	this->image[1].setPosition(SCREEN_LEFT, SCREEN_TOP);
+	// create enemy
+	this->image[2].setImage("enemy/slmA.bmp");
+	this->image[2].setPosition(SCREEN_LEFT + 32, SCREEN_TOP);
+	//==================================================
 	//draw map
 	//this->drawMap();
 }
@@ -248,3 +263,6 @@ void Map::update() {
 
 }
 
+void Map::longUpdate() {
+
+}

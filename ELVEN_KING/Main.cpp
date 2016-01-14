@@ -101,5 +101,6 @@ LRESULT CALLBACK MainProc
 TIMERPROC update(HWND hwnd, UINT sMsg, UINT_PTR idEvent, DWORD dwTime) {
 	InvalidateRect(hwnd, &graphics.gameScreen, FALSE);
 	UpdateWindow(hwnd);
+	if (stage != NULL) stage->longUpdate();
 	return 0;
 }

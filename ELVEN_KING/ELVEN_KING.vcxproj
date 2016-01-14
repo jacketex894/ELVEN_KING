@@ -167,6 +167,7 @@
     <ClInclude Include="Data\System\Control.h" />
     <ClInclude Include="Data\System\Database.h" />
     <ClInclude Include="Data\System\Debug.h" />
+    <ClInclude Include="Data\System\Enemy.h" />
     <ClInclude Include="Data\System\File.h" />
     <ClInclude Include="Data\System\Global.h" />
     <ClInclude Include="Data\System\Graphics.h" />

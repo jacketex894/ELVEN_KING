@@ -14,4 +14,5 @@ class Stage {
         Image *image = NULL;
         int imageCount = 0;
 		virtual void update() = NULL;
+		void longUpdate();
 };
