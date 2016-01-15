@@ -22,12 +22,11 @@ public:
 	int getWidth();
 	int getHeight();
 	bool getPass(int,int);
-	
-	void longUpdate();
+
 	void update();
 private:
 	//========================
-	Enemy *enemys;
+//	Enemy *enemys;
 	//========================
 	//base data
 	File* fMap;
@@ -50,6 +49,12 @@ private:
 	//create map image
 	void drawMap();
 };
+
+int actorX = 0,
+    actorY = 0,
+    enemyX = 15,
+    enemyY = 15,
+    wait = 0,rWait = 15;
 
 Map::Map(string mapName,string mapBGM) : Stage(mapBGM)
 {	
@@ -80,11 +85,14 @@ Map::Map(string mapName,string mapBGM) : Stage(mapBGM)
 	this->image[0].setImage("map_A.bmp");
 	this->image[0].setPosition(SCREEN_LEFT, SCREEN_TOP);
 	// create actor
-	this->image[1].setImage("actor/downA.bmp");
-	this->image[1].setPosition(SCREEN_LEFT, SCREEN_TOP);
+    this->image[1].setImage("actor/01.bmp");
+    this->image[1].setPosition(SCREEN_LEFT, SCREEN_TOP);
+    this->image[2].setImage("actor/02.bmp");
+    this->image[2].setPosition(SCREEN_LEFT, SCREEN_TOP);
+    this->image[2].setVisiable(false);
 	// create enemy
-	this->image[2].setImage("enemy/slmA.bmp");
-	this->image[2].setPosition(SCREEN_LEFT + 32, SCREEN_TOP);
+	this->image[3].setImage("enemy/slmA.bmp");
+	this->image[3].setPosition(SCREEN_LEFT + 32, SCREEN_TOP);
 	//==================================================
 	//draw map
 	//this->drawMap();
@@ -260,9 +268,46 @@ void Map::drawMap() {
 }
 
 void Map::update() {
-
-}
-
-void Map::longUpdate() {
-
+    switch (control.key) {
+    case VK_UP:
+        if (actorY - 1 >= 0) actorY -= 1;
+        break;
+    case VK_DOWN:
+        if (actorY + 1 < 24) actorY += 1;
+        break;
+    case VK_LEFT:
+        if (actorX - 1 >= 0) actorX -= 1;
+        this->image[1].setVisiable(true);
+        this->image[2].setVisiable(false);
+        break;
+    case VK_RIGHT:
+        if (actorX + 1 < 37) actorX += 1;
+        this->image[1].setVisiable(false);
+        this->image[2].setVisiable(true);
+        break;
+    }
+    int x= SCREEN_LEFT + actorX * BLOCK_SIZE;
+    int y= SCREEN_TOP + actorY * BLOCK_SIZE;
+    if(this->image[1].getVisiable())
+        this->image[1].setPositionTransition(x, y, 30);
+    else
+        this->image[1].setPosition(x, y);
+    if (this->image[2].getVisiable())
+        this->image[2].setPositionTransition(x, y, 30);
+    else
+        this->image[2].setPosition(x, y);
+    x = SCREEN_LEFT + enemyX * BLOCK_SIZE;
+    y = SCREEN_TOP + enemyY * BLOCK_SIZE;
+    if (enemyX > 35) enemyX = 35;
+    if (enemyX < 0) enemyX = 1;
+    if (enemyY > 22) enemyY = 22;
+    if (enemyY < 0) enemyY = 1;
+    this->image[3].setPositionTransition(x, y, 30);
+    if (enemyX == actorX && enemyY == actorY)
+    {
+        this->image[3].setVisiable(false);
+        wait = 90;
+    }
+    if(wait == 0)
+        this->image[3].setVisiable(true);
 }

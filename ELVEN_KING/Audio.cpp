@@ -13,7 +13,7 @@ void Audio::setBGM(string address) {
 }
 
 void Audio::playBGM() {
-	PlaySound(this->BGMName, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP | SND_ALIAS);
+	PlaySound(this->BGMName, NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 	this->playing = true;
 }
 

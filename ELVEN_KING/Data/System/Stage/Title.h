@@ -28,9 +28,9 @@ Title::Title() :Stage(TITLE_BGM) {
 	this->image[1].setImage(TITLE_OPTION_IMAGE_A);
 	this->image[2].setImage(TITLE_OPTION_IMAGE_B);
 	this->image[3].setImage(TITLE_OPTION_IMAGE_C);
-	this->image[1].setPosition(1100, 650);
-	this->image[2].setPosition(1150, 710);
-	this->image[3].setPosition(1150, 770);
+	this->image[1].setPosition(800, 550);
+	this->image[2].setPosition(850, 610);
+	this->image[3].setPosition(850, 670);
 }
 
 void Title::update() {
@@ -46,7 +46,7 @@ void Title::update() {
 		switch (this->selection->getIndex())
 		{
 		case 0:
-			stage = new Map("ex1","helix.wav"); //To Map
+			stage = new Map("ex1","map.wav"); //To Map
 			break;
 		case 1:
 			break;
@@ -60,8 +60,8 @@ void Title::update() {
 	for (int index = 1; index < 4; index++) {
 		if (index == (this->selection->getIndex() + 1) && tempIndex != index)
 		{
-		this->image[tempIndex].setPositionTransition(1150, 650 + 60 * (tempIndex - 1), 60);
-		this->image[index].setPositionTransition(1100, 650 + 60 * (index - 1), 60);
+		this->image[tempIndex].setPositionTransition(850, 550 + 60 * (tempIndex - 1), 60);
+		this->image[index].setPositionTransition(800, 550 + 60 * (index - 1), 60);
 		tempIndex = index;
 		}
 	}

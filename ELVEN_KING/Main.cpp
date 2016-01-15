@@ -99,8 +99,19 @@ LRESULT CALLBACK MainProc
 }
 
 TIMERPROC update(HWND hwnd, UINT sMsg, UINT_PTR idEvent, DWORD dwTime) {
+    extern int enemyX , enemyY, wait ,rWait;
+    if (rWait == 0)
+    {
+        enemyX += rand() * 100 % 3 - 1;
+        enemyY += rand() * 100 % 3 - 1;
+        rWait = 15;
+    }
+    else
+    {
+        rWait--;
+    }
+    if(wait > 0) wait--; 
 	InvalidateRect(hwnd, &graphics.gameScreen, FALSE);
-	UpdateWindow(hwnd);
-	if (stage != NULL) stage->longUpdate();
+	UpdateWindow(hwnd); 
 	return 0;
 }
