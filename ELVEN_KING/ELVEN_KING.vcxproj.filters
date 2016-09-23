@@ -25,6 +25,9 @@
     <Filter Include="標頭檔\場景">
       <UniqueIdentifier>{d743646e-4043-42ac-bc4b-492b94ce1194}</UniqueIdentifier>
     </Filter>
+    <Filter Include="資源檔\渲染">
+      <UniqueIdentifier>{dfb5a6f4-135a-49a1-bad5-04190a4459be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp">
@@ -39,12 +42,6 @@
     <ClCompile Include="File.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics.cpp">
-      <Filter>原始程式檔</Filter>
-    </ClCompile>
-    <ClCompile Include="Image.cpp">
-      <Filter>原始程式檔</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
@@ -57,11 +54,11 @@
     <ClCompile Include="Data\System\Sqlite\sqlite3.c">
       <Filter>資源檔\資料庫</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data\System\Stage\Map.h">
-      <Filter>標頭檔\場景</Filter>
-    </ClInclude>
     <ClInclude Include="Data\System\Stage\Title.h">
       <Filter>標頭檔\場景</Filter>
     </ClInclude>
@@ -95,12 +92,6 @@
     <ClInclude Include="Data\System\Global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="Data\System\Graphics.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="Data\System\Image.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="Data\System\Item.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -120,6 +111,12 @@
       <Filter>資源檔</Filter>
     </ClInclude>
     <ClInclude Include="Data\System\Enemy.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\OpenGL\glut.h">
+      <Filter>資源檔\渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\System\Graphics.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

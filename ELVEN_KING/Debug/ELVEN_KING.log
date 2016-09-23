@@ -1,23 +1,7 @@
-﻿已經開始建置於 2016/1/15 下午 02:37:38。
-     1>節點 2 (Build 目標) 上的專案 "D:\CRPG\ELVEN_KING\ELVEN_KING.vcxproj"。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Audio.cpp
-         Audio.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\CRPG\Debug\ELVEN_KING.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\CRPG\Debug\ELVEN_KING.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\CRPG\Debug\ELVEN_KING.lib" /MACHINE:X86 Debug\ELVEN_KING.res
-         Debug\Audio.obj
-         Debug\Database.obj
-         Debug\sqlite3.obj
-         Debug\Debug.obj
-         Debug\File.obj
-         Debug\Graphics.obj
-         Debug\Image.obj
-         Debug\Main.obj
-         Debug\Selection.obj
-         Debug\Stage.obj
-         ELVEN_KING.vcxproj -> D:\CRPG\Debug\ELVEN_KING.exe
-     1>專案 "D:\CRPG\ELVEN_KING\ELVEN_KING.vcxproj" (Build 目標) 建置完成。
-
-建置成功。
-
-經過時間 00:00:09.13
+﻿  Main.cpp
+  Generating Code...
+  Compiling...
+  Graphics.cpp
+  Generating Code...
+Main.obj : error LNK2019: unresolved external symbol "public: void __thiscall Graphics::update(void)" (?update@Graphics@@QAEXXZ) referenced in function "long __stdcall MainProc(struct HWND__ *,unsigned int,unsigned int,long)" (?MainProc@@YGJPAUHWND__@@IIJ@Z)
+D:\Program\ELVEN_KING\Debug\ELVEN_KING.exe : fatal error LNK1120: 1 unresolved externals

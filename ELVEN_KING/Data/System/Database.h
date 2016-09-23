@@ -8,8 +8,7 @@ using namespace std;
 
 int sqlCallback(void*, int, char**, char**);
 
-class Database
-{
+class Database {
 public:
 	Database(string);
 	void sql(string);

@@ -6,8 +6,7 @@
 
 using namespace std;
 
-class File
-{
+class File {
 public:
 	File(string);
 	File(string, string);

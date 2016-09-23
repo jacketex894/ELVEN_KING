@@ -1,29 +1,20 @@
 #pragma once
-#include <windows.h>
 #include "Base.h"
-#include "Debug.h"
-#include "Image.h"
+#include <Windows.h>
+#include <d2d1.h>
 
-class Graphics
-{
-public:
-    void initialize(HWND);
-	HWND hwnd;
-    void update();
-	void setClear(bool);
-    RECT gameScreen;
-	Image *image = NULL;
-    int imageCount = NULL;
+#pragma comment(lib, "d2d1")
+
+class Graphics {
 private:
-    HDC hdc;
-    HDC hMemoryDC;
-    PAINTSTRUCT paintStruct;
-    HBITMAP hBitmap;
-    int hBitmapWidth;
-    int hBitmapHeight;
-    void setScreen();
-	void drawImage();
-	bool clear = false;
-	void clearScreen();
+    ID2D1Factory *factory;
+    ID2D1HwndRenderTarget *randerTarget;
+    HDC hdC;
+public:
+    Graphics();
+    ~Graphics();
+    RECT screen = SCREEN;
+    bool initialize(HWND);
+    void clearScreen();
+    void update();
 };
-

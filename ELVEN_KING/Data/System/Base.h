@@ -14,6 +14,9 @@
 #define SCREEN_LEFT				(GetSystemMetrics(SM_CXSCREEN) - SCREEN_WIDTH) / 2
 #define SCREEN_TOP				(GetSystemMetrics(SM_CYSCREEN) - SCREEN_HEIGHT) / 2
 
+#define SCREEN                  {SCREEN_LEFT, SCREEN_TOP,\
+                                 SCREEN_LEFT + SCREEN_WIDTH, SCREEN_TOP + SCREEN_HEIGHT}
+
 #define CENTER_X(width)			SCREEN_LEFT + (SCREEN_WIDTH - (width))/2
 #define CENTER_Y(height)		SCREEN_TOP + (SCREEN_HEIGHT - (height))/2
 

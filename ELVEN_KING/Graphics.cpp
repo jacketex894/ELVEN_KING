@@ -1,64 +1,43 @@
 #include "Data\System\Graphics.h"
 
-void Graphics::initialize(HWND hwnd)
+Graphics::Graphics()
 {
-    //get windows handle varible
-    this->hwnd = hwnd;
-    //setting game screen
-    this->setScreen();
-    //create  memory HDC
-    this->hMemoryDC = CreateCompatibleDC(this->hdc);
-    //create buffer bitmap
-    hBitmapWidth = this->gameScreen.right - this->gameScreen.left;
-    hBitmapHeight = this->gameScreen.bottom - this->gameScreen.top;
-    this->hBitmap = CreateCompatibleBitmap(this->hdc,hBitmapWidth,hBitmapHeight);
-    SelectObject(this->hMemoryDC,this->hBitmap);
+    this->factory = NULL;
+    this->randerTarget = NULL;
 }
 
-void Graphics::setScreen()
+Graphics::~Graphics()
 {
-    this->gameScreen.left = (GetSystemMetrics(SM_CXSCREEN) - SCREEN_WIDTH) / 2;
-    this->gameScreen.top = (GetSystemMetrics(SM_CYSCREEN) - SCREEN_HEIGHT) / 2;
-    this->gameScreen.right = gameScreen.left + SCREEN_WIDTH;
-    this->gameScreen.bottom = gameScreen.top + SCREEN_HEIGHT;
+    if(this->factory) this->factory->Release();
+    if (this->randerTarget) this->randerTarget->Release();
 }
 
-void Graphics::update() {
-	//to begin draw 
-	this->hMemoryDC = BeginPaint(this->hwnd, &this->paintStruct);
-    this->drawImage();
-	//clear screen
-	if (clear) this->clearScreen();
-    //copy memory hdc to real hdc
-    BitBlt(this->hdc,0,0,this->hBitmapWidth,this->hBitmapHeight,this->hMemoryDC,0,0,SRCCOPY);
-	EndPaint(this->hwnd, &this->paintStruct);
+bool Graphics::initialize(HWND hwnd)
+{
+    HRESULT res = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &this->factory);
+    if (res != S_OK) return false;
+
+    res = factory->CreateHwndRenderTarget(
+          D2D1::RenderTargetProperties(),
+          D2D1::HwndRenderTargetProperties(hwnd, D2D1::SizeU(SCREEN_WIDTH, SCREEN_HEIGHT)),
+          &this->randerTarget);
+    
+    if (res != S_OK) return false;
+
+    return true;
 }
 
-void Graphics::setClear(bool setting) {
-	this->clear = setting;
+void Graphics::update()
+{
+    ID2D1SolidColorBrush *brush = NULL;
+    this->randerTarget->BeginDraw();
+    this->randerTarget->CreateSolidColorBrush(D2D1::ColorF(0, 0, 0, 1), &brush);
+    //this->randerTarget->DrawEllipse(D2D1::Ellipse(D2D1::Point2F(100, 100), 50, 50), brush, 3.0f);
+    this->randerTarget->EndDraw();
+    brush->Release();
 }
 
-void Graphics::clearScreen() {
-	RECT rect;
-	rect.left = SCREEN_LEFT;
-	rect.top = SCREEN_TOP;
-	rect.right = rect.left + SCREEN_WIDTH;
-	rect.bottom = rect.top + SCREEN_HEIGHT;
-	FillRect(this->hMemoryDC, &rect, (HBRUSH)GetStockObject(BLACK_BRUSH));
-	this->clear = false;
-}
-
-void Graphics::drawImage() {
-	static int index;
-	for (index = 0; index < this->imageCount; index++) {
-		Image img = this->image[index];
-		if (!img.getVisiable()) continue;
-        BitBlt(	this->hMemoryDC,
-				img.getX(),
-				img.getY(),
-				img.getWidth(),
-				img.getHeight(),
-				img.getHdc(), 0, 0, SRCCOPY);
-		this->image[index].update();
-	}
+void Graphics::clearScreen()
+{
+    this->randerTarget->Clear(D2D1::ColorF(1, 1, 1));
 }
